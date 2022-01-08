@@ -1,0 +1,56 @@
+@media screen and (max-width: 994px) and (min-width: 768px) {
+  .crafting-breakpoint {
+    transform: scale(1.25) translateY(22px);
+    margin-bottom: 3rem;
+  }
+  .cooking-table-breakpoint {
+    transform: scale(2);
+    margin: 5rem;
+  }
+  #sub-title-breakpoint {
+    padding: 0 120px 0;
+  }
+}
+
+@media screen and (min-width: 995px) {
+  .crafting-breakpoint {
+    transform: scale(1.7) translateY(30px);
+    margin-bottom: 3rem;
+  }
+  .cooking-table-breakpoint {
+    transform: scale(2);
+    margin: 5rem;
+  }
+}
+@media screen and (min-width: 476px) and (max-width: 767px) {
+  .crafting-breakpoint {
+    transform: scale(1.7) translateY(30px);
+    margin-bottom: 3rem;
+  }
+  .cooking-table-breakpoint {
+    transform: scale(1.75) translateY(32px);
+    margin-bottom: 8rem;
+  }
+}
+@media screen and (max-width: 475px) {
+  .crafting-breakpoint {
+    transform: scale(1.25) translateY(22px);
+    margin-bottom: 10px;
+  }
+  .cooking-table-breakpoint {
+    transform: scale(1.25) translateY(22px);
+    margin-bottom: 60px;
+    margin-left: 3rem;
+  }
+}
+@media screen and (min-width: 995px) and (max-width: 1273px) {
+  #sub-title-breakpoint {
+    padding: 0 229px 0;
+  }
+}
+
+@media screen and (min-width: 1274px) {
+  #sub-title-breakpoint {
+    padding: 0 274px 0;
+  }
+}

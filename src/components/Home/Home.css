@@ -1,0 +1,41 @@
+.kotak-bawah-kiri {
+  background-color: rgb(235, 235, 235);
+  height: 180px;
+  border-radius: 20px 0 0 20px;
+}
+.kotak-bawah-kanan {
+  border-radius: 0 20px 20px 0;
+  background-color: rgb(241, 241, 241);
+}
+.warna1 {
+  background-color: #f3f3f3;
+}
+
+.margin-minus-50 {
+  margin-bottom: -50px;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.menu-konteks {
+  width: 200px;
+}
+
+.menu-konteks .benda {
+  padding: 8px 10px;
+  font-size: 25px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.menu-konteks .benda:hover {
+  background-color: white;
+  cursor: default;
+}
+
+.menu-konteks .benda i {
+  display: inline-block;
+  margin-right: 5px;
+}
