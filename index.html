@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="img/logo.png">
+
+    <title>Egg Foods Documentation</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+
+      .kotak-bawah-kiri {
+        background-color: rgb(235, 235, 235); 
+        height: 180px;
+        border-radius: 20px 0 0 20px;
+      }
+      .kotak-bawah-kanan {
+        border-radius: 0 20px 20px 0;
+      }
+      .warna1 {
+        background-color: #f3f3f3;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="p-5 bg-light rounded-3 " style="margin-bottom: -5rem;">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="" width="40" height="40" class="d-inline-block align-text-top">
+            Egg Foods
+          </a>
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="changelog-tab" data-bs-toggle="tab" data-bs-target="#changelog" type="button" role="tab" aria-controls="changelog" aria-selected="false">Changelog</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="recipes-tab" data-bs-toggle="tab" data-bs-target="#recipes" type="button" role="tab" aria-controls="recipes" aria-selected="false">Recipes</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+              <button class="nav-link" id="items-tab" data-bs-toggle="tab" data-bs-target="#items" type="button" role="tab" aria-controls="items" aria-selected="false">Items</button>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container-fluid py-5 bg-light mb-4">
+    
+          <img src="img/logo.png" width="300px" height="300px" class="mx-auto d-block" style="margin-bottom: -50px;">
+          
+          <p class="col-md-8 fs-4 text-center mx-auto">Egg Foods for Minecraft Bedrock</p>
+
+          
+        </div>
+            
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col-lg-5 col-md-7 col-xl-4 kotak-bawah-kiri" style="background-color: rgb(243, 243, 243);">
+              <nav class="d-grid gap-2">
+                <a href="https://mcpedl.com/fried-egg-addon-1/" class="btn btn-hover-light d-flex align-items-center gap-3 py-2 px-3 lh-sm">
+                  <img src="img/mcpedl.png" alt="" width="70px">
+                  <span class="text-start">
+                    <strong class="">MCPEDL</strong><br>
+                    <small class="">Click here to go to Egg foods page on MCPEDL</small>
+                  </span>
+                </a>
+                <a href="https://link-center.net/230666/egg-foods-v31" class="btn btn-hover-light d-flex align-items-center gap-3 py-2 px-3 lh-sm">
+                  <img src="img/logo.png" alt="" width="70px">
+                  <span class="text-start">
+                    <strong class="">Download</strong><br>
+                    <small class="">Click here to Download</small>
+                  </span>
+                </a>
+              </nav>
+            </div>
+            <div class="col-lg-3 col-md-5 col-xl-2 kotak-bawah-kanan" style="background-color: rgb(241, 241, 241);">
+              <div class="menu-konteks ">
+                <div class="benda changelog fs-6" style="margin-top: 25px;">
+                  <i class="bi bi-diagram-2"></i>
+                  Changelog
+                </div>
+                <div class="benda recipes fs-6">
+                  <i class="bi bi-card-checklist"></i>
+                  Recipes
+                </div>
+                <!-- <div class="benda items fs-6">
+                  <i class="bi bi-egg-fried"></i>
+                  Items
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+
+      <div class="tab-pane" id="changelog" role="tabpanel" aria-labelledby="changelog-tab">
+        <div class="container-fluid py-5 bg-light mb-4">
+          <h1 class="display-5 fw-bold text-center">
+            Release Changelog
+
+          </h1>
+        </div>
+        
+        <div class="data-changelog">
+          
+        </div>
+
+
+
+
+
+
+      </div>
+
+      <div class="tab-pane" id="recipes" role="tabpanel" aria-labelledby="recipes-tab" style="font-family: 'PT Sans', sans-serif;">
+        <div class="container-fluid py-5 bg-light mb-4">
+          <h1 class="display-5 fw-bold text-center">
+            Crafting Recipes
+
+          </h1>
+        </div>
+        <div class="container" >
+          <div class="row justify-content-md-center mb-3">
+            <div class="col-10">
+              <h5>Attention!</h3>
+              <h6>Items must be placed according to the picture, if you put them randomly, you will not be able to make the item</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <h1 class="text-center">Cooking Table</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="cooking-table justify-content-center" style="width: 100%;">
+
+              </div>
+            </div>
+            
+            <div class="row justify-content-center" id="sub-title-breakpoint">
+              <p class="col text-center" style="color: #666666; font-family: Arial, Helvetica, sans-serif;">the cooking table is used to make egg food, all food and spices are also made from the cooking table. But you also can't make the food on the crafting table. crafting table is used to make cooking utensils such as skillet, saucepan, etc. 
+              </p>
+            </div>
+
+            <hr>
+
+            <div class="container">
+              <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                  <h1 class="text-center">Tools</h1>
+                  <h4 class="text-center">(Use a crafting table, not a cooking table)</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row tools-recipes" style="margin-bottom: 100px;">
+                
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="container" style="margin-top: 5rem;">
+              <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                  <h1 class="text-center">Ingredients and Spices</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="container" style="margin-bottom: 100px;">
+              <div class="row ingredients-recipes">
+
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="container" style="margin-top: 5rem;">
+              <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                  <h1 class="text-center">Foods</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row foods-recipes">
+
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="tab-pane" id="items" role="tabpanel" aria-labelledby="items-tab">
+        <div class="container-fluid py-5 bg-light mb-4">
+          
+
+        </div>
+      </div> -->
+
+
+    </div>
+
+
+    <br><br><br><br><br><br>
+
+      
+    <div class="container">
+      <h6 class="text-center" style="color: #6b7280;">Website by <a href="https://github.com/EdselFord" class="text-decoration-none">Edsel Ford</a></h6>
+    </div>
+
+    
+
+    <script src="script/items.js"></script>
+    <script src="script/data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="script/script.js"></script>
+  </body>
+</html>
