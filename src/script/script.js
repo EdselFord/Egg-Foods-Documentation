@@ -1,3 +1,9 @@
+import itemsData from "../json/items.json";
+import recipeData from "../json/data.json";
+let { changelog, cookingTables, toolsRecipe, spicesRecipe, eggFoods } = recipeData;
+
+import "../style/style.css";
+
 const tombolMenu = document.getElementsByClassName("benda");
 
 Array.from(tombolMenu).forEach((x) => {
@@ -34,7 +40,7 @@ changelog.forEach((y) => {
       <div class="collapse" id="${y.id}">
         <div class="card card-body">
           <div class="row">
-            <img src="${y.thumb}" alt="" class="col-lg-7" style="border-radius: 20px;">
+            <img src="img/${y.thumb}" alt="" class="col-lg-7" style="border-radius: 20px;">
             <div class="col-lg-5 mt-3">
               <h3>Added</h3>
                 <ul class="list-group list-group-flush">
