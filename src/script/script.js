@@ -1,8 +1,25 @@
+import "../style/style.css";
 import itemsData from "../json/items.json";
 import recipeData from "../json/data.json";
 let { changelog, cookingTables, toolsRecipe, spicesRecipe, eggFoods } = recipeData;
 
-import "../style/style.css";
+var $_GET = {};
+window.addEventListener("load", function (event) {
+  var parts = window.location.search.substr(1).split("&");
+  for (var i = 0; i < parts.length; i++) {
+    var part = parts[i].split("=");
+    $_GET[decodeURIComponent(part[0])] = decodeURIComponent(part[1]);
+  }
+
+  switch ($_GET.goto) {
+    case "recipe":
+      document.getElementById("recipes-tab").click();
+      break;
+    case "changelog":
+      document.getElementById("changelog-tab").click();
+      break;
+  }
+});
 
 const tombolMenu = document.getElementsByClassName("benda");
 
@@ -53,7 +70,7 @@ changelog.forEach((y) => {
     </div>
     </div>`;
 
-  $(".data-changelog").append(s);
+  document.querySelector(".data-changelog").innerHTML += s;
 });
 
 function findItemData(keys) {
@@ -72,10 +89,18 @@ const craftingRecipes = (data, style, bootstrap = "") => {
               hasilCrafting += `<div style="top:${firstIndex * 36}px;left:${
                 i * 36
               }px;width:32px;height:32px;position:absolute">
-              <a href="#" title="${findItemData(firstArray[i].split("-")).name}">
-                <img alt="${
-                  findItemData(firstArray[i].split("-")).name
-                }.png" src="img/minecraftitems/${firstArray[i]}.png" width="32" height="32">
+              <a title="${findItemData(firstArray[i].split("-")).name}">
+                <img
+                  src="img/minecraftitems/${firstArray[i]}.png" 
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="${
+                    firstArray[i] == "0-0" ? "" : findItemData(firstArray[i].split("-")).name
+                  }"
+                  class="tt" 
+                  width="32" 
+                  height="32"
+                >
               </a>
             </div>`;
             }
@@ -84,10 +109,16 @@ const craftingRecipes = (data, style, bootstrap = "") => {
           return hasilCrafting;
         })()}
         <div style="top:36px;left:188px;width:32px;height:32px;position:absolute">
-          <a href="#" title="${data.itemName}">
-            <img alt="${data.itemName}.png" src="img/moditems/${
-    data.result
-  }.png" width="32" height="32">
+          <a title="${data.itemName}">
+            <img 
+              alt="${data.itemName}.png" 
+              src="img/moditems/${data.result}.png" 
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="${data.itemName}"
+              class="tt" 
+              width="32" 
+              height="32">
           </a>
         </div>
       </div>
@@ -102,20 +133,37 @@ const furnaceRecipes = (data, style, bootstrap) => {
 
       <!-- Body -->
       <div style="top:14px;left:14px;position: absolute;">
-      <a href="#">
+      <a>
         <img alt="${findItemData(data.keys.split("-")).name}}" src="img/minecraftitems/${
     data.keys
-  }.png" width="32" height="32">
+  }.png" width="32" height="32"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="${findItemData(data.keys.split("-")).name}"
+            class="tt" 
+  >
         </a>
       </div>
       <div style="top:50px;left:134px;position: absolute;">
-        <a href="#">
-          <img alt="${data.itemName}" src="img/moditems/${data.result}.png" width="32" height="32">
+        <a>
+          <img 
+            alt="${data.itemName}" 
+            src="img/moditems/${data.result}.png" 
+            width="32" 
+            height="32"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="${data.itemName}"
+            class="tt" 
+          >
         </a>
       </div>
       <div style="top:86px;left:14px;position: absolute;">
-        <a href="/#">
-          <img alt="Coal" src="img/minecraftitems/263-0.png" width="32" height="32">
+        <a>
+          <img alt="Coal" src="img/minecraftitems/263-0.png" width="32" height="32" data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Coal"
+          class="tt" >
         </a>
       </div>
     </div>
@@ -128,7 +176,11 @@ const isFurnace = (data, style, bootstrap) => {
   else return craftingRecipes(data, style, `${bootstrap} crafting-breakpoint`);
 };
 
-$(".cooking-table").append(craftingRecipes(cookingTables, "", "mx-auto cooking-table-breakpoint"));
+document.querySelector(".cooking-table").innerHTML = craftingRecipes(
+  cookingTables,
+  "",
+  "mx-auto cooking-table-breakpoint"
+);
 
 const craftingDisplay = (data) => {
   let hasil = "";
@@ -146,8 +198,19 @@ const craftingDisplay = (data) => {
   return hasil;
 };
 
-$(".tools-recipes").append(craftingDisplay(toolsRecipe));
+document.querySelector(".tools-recipes").innerHTML = craftingDisplay(toolsRecipe);
 
-$(".ingredients-recipes").append(craftingDisplay(spicesRecipe));
+document.querySelector(".ingredients-recipes").innerHTML = craftingDisplay(spicesRecipe);
 
-$(".foods-recipes").append(craftingDisplay(eggFoods));
+document.querySelector(".foods-recipes").innerHTML = craftingDisplay(eggFoods);
+
+const tooltips = document.querySelectorAll(".tt");
+tooltips.forEach((t) => {
+  new bootstrap.Tooltip(t);
+});
+
+document.querySelector(".navigasi-bar-brand").addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.search = "";
+  document.getElementById("home-tab").click();
+});
